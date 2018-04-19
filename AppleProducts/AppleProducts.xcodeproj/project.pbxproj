@@ -12,6 +12,8 @@
 		590E93962088FC5400B9E2A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 590E93942088FC5400B9E2A5 /* Main.storyboard */; };
 		590E93982088FC5500B9E2A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 590E93972088FC5500B9E2A5 /* Assets.xcassets */; };
 		590E939B2088FC5500B9E2A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 590E93992088FC5500B9E2A5 /* LaunchScreen.storyboard */; };
+		590E93A62088FEE800B9E2A5 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590E93A52088FEE800B9E2A5 /* Product.swift */; };
+		590E93A82089038B00B9E2A5 /* ProductLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590E93A72089038B00B9E2A5 /* ProductLine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		590E93972088FC5500B9E2A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		590E939A2088FC5500B9E2A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		590E939C2088FC5500B9E2A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		590E93A52088FEE800B9E2A5 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		590E93A72089038B00B9E2A5 /* ProductLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductLine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 		590E938F2088FC5400B9E2A5 /* AppleProducts */ = {
 			isa = PBXGroup;
 			children = (
+				590E93A22088FED100B9E2A5 /* Model */,
 				590E93902088FC5400B9E2A5 /* AppDelegate.swift */,
 				590E93922088FC5400B9E2A5 /* ViewController.swift */,
 				590E93942088FC5400B9E2A5 /* Main.storyboard */,
@@ -62,6 +67,15 @@
 				590E939C2088FC5500B9E2A5 /* Info.plist */,
 			);
 			path = AppleProducts;
+			sourceTree = "<group>";
+		};
+		590E93A22088FED100B9E2A5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				590E93A52088FEE800B9E2A5 /* Product.swift */,
+				590E93A72089038B00B9E2A5 /* ProductLine.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,7 +150,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				590E93932088FC5400B9E2A5 /* ViewController.swift in Sources */,
+				590E93A82089038B00B9E2A5 /* ProductLine.swift in Sources */,
 				590E93912088FC5400B9E2A5 /* AppDelegate.swift in Sources */,
+				590E93A62088FEE800B9E2A5 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

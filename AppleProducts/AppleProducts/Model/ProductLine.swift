@@ -17,8 +17,8 @@ class ProductLine {
         products = includesProducts
     }
     
-    static func getProducts() -> [Product] {
-        return []
+    static func getProducts() -> [ProductLine] {
+        return [iDevices(),mac(),software(),iPod(),iCloudAndApplePay()]
     }
     
     //MARK: Private Methods

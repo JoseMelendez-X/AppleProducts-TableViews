@@ -12,13 +12,14 @@ class ProductsTableViewController: UITableViewController {
     
     //MARK: Data Models
     
-    var products = ProductLine.getProducts()[0].products
+    var products = ProductLine.getProducts()[1].products
     
     //Mark: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        title = "Apple Store"
+        
     }
     
     //MARK: UITableViewDataSource, Required Methods
@@ -32,9 +33,12 @@ class ProductsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath) as! ProductTableViewCell
         let product = products[indexPath.row]
-        cell.textLabel?.text = product.title
+        
+        //Set the product property of the ProductTableViewCell
+        cell.product = product
+        
         return cell
     }
 

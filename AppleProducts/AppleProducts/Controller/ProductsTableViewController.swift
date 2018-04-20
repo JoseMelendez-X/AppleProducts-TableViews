@@ -18,7 +18,12 @@ class ProductsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Navigation bar title
         title = "Apple Store"
+        
+        //Edit bar button Item. Activates editing mode automatically
+        navigationItem.rightBarButtonItem = editButtonItem
         
     }
     
@@ -50,5 +55,18 @@ extension ProductsTableViewController {
     //Section titles
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return productLine[section].name
+    }
+    
+    //Delete rows
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            
+            //Delete the product from the productLine's product array.
+            productLine[indexPath.section].products.remove(at: indexPath.row)
+            
+            //Update the tableView
+            //tableView.reloadData() bad way!
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
     }
 }

@@ -12,7 +12,7 @@ class ProductsTableViewController: UITableViewController {
     
     //MARK: Data Models
     
-    var products = ProductLine.getProducts()[1].products
+    var productLine = ProductLine.getProducts()
     
     //Mark: Lifecycle
     
@@ -25,16 +25,17 @@ class ProductsTableViewController: UITableViewController {
     //MARK: UITableViewDataSource, Required Methods
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return productLine.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return products.count
+        return productLine[section].products.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath) as! ProductTableViewCell
-        let product = products[indexPath.row]
+        let productLine = self.productLine[indexPath.section]
+        let product = productLine.products[indexPath.row]
         
         //Set the product property of the ProductTableViewCell
         cell.product = product
@@ -42,4 +43,12 @@ class ProductsTableViewController: UITableViewController {
         return cell
     }
 
+}
+
+extension ProductsTableViewController {
+    
+    //Section titles
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return productLine[section].name
+    }
 }

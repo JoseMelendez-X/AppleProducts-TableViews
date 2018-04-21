@@ -10,11 +10,14 @@ import UIKit
 
 class ProductsTableViewController: UITableViewController {
     
-    //MARK: Data Models
+    //MARK: - Data Models
     
     var productLines = ProductLine.getProducts()
     
-    //Mark: Lifecycle
+    //MARK: - Properties
+    var selectedProduct: Product?
+    
+    //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +30,7 @@ class ProductsTableViewController: UITableViewController {
         
     }
     
-    //MARK: UITableViewDataSource, Required Methods
+    //MARK: - UITableViewDataSource, Required Methods
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return productLines.count
@@ -49,6 +52,8 @@ class ProductsTableViewController: UITableViewController {
     }
 
 }
+
+//MARK: - TableViewDelegate/DataSource Methods
 
 extension ProductsTableViewController {
     
@@ -81,5 +86,26 @@ extension ProductsTableViewController {
         
         //Delete the productToMove from the sourceIndexPaths products
         productLines[sourceIndexPath.section].products.remove(at: sourceIndexPath.row)
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let product = productLines[indexPath.section].products[indexPath.row]
+        selectedProduct = product
+        
+        //Perform segue to productDetailTVC
+        performSegue(withIdentifier: "toProductDetail", sender: nil)
+        
+    }
+}
+
+//MARK: - Navigation
+
+extension ProductsTableViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toProductDetail" {
+            let destinationTVC = segue.destination as! ProductDetailTableViewController
+            destinationTVC.product = selectedProduct
+        }
     }
 }

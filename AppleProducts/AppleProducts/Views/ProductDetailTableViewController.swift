@@ -12,7 +12,7 @@ class ProductDetailTableViewController: UITableViewController {
     
     //MARK: Data Model
     
-    var product: Product? = ProductLine.getProducts()[0].products[0]
+    var product: Product? 
     
     //MARK: IB Outlets
     

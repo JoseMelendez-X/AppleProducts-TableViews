@@ -15,6 +15,7 @@
 		590E93A82089038B00B9E2A5 /* ProductLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590E93A72089038B00B9E2A5 /* ProductLine.swift */; };
 		590E93AA2089124600B9E2A5 /* ProductsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590E93A92089124600B9E2A5 /* ProductsTableViewController.swift */; };
 		590E93AF2089436500B9E2A5 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590E93AE2089436500B9E2A5 /* ProductTableViewCell.swift */; };
+		5943ED9D208AF66C00EA083D /* ProductDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5943ED9C208AF66C00EA083D /* ProductDetailTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		590E93A72089038B00B9E2A5 /* ProductLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductLine.swift; sourceTree = "<group>"; };
 		590E93A92089124600B9E2A5 /* ProductsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsTableViewController.swift; sourceTree = "<group>"; };
 		590E93AE2089436500B9E2A5 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
+		5943ED9C208AF66C00EA083D /* ProductDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				590E93942088FC5400B9E2A5 /* Main.storyboard */,
+				5943ED9C208AF66C00EA083D /* ProductDetailTableViewController.swift */,
 				590E93AE2089436500B9E2A5 /* ProductTableViewCell.swift */,
 			);
 			path = Views;
@@ -180,6 +183,7 @@
 				590E93AA2089124600B9E2A5 /* ProductsTableViewController.swift in Sources */,
 				590E93AF2089436500B9E2A5 /* ProductTableViewCell.swift in Sources */,
 				590E93912088FC5400B9E2A5 /* AppDelegate.swift in Sources */,
+				5943ED9D208AF66C00EA083D /* ProductDetailTableViewController.swift in Sources */,
 				590E93A62088FEE800B9E2A5 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -80,6 +80,6 @@ extension ProductsTableViewController {
         productLines[destinationIndexPath.section].products.insert(productToMove, at: destinationIndexPath.row)
         
         //Delete the productToMove from the sourceIndexPaths products
-        productLines[destinationIndexPath.section].products.remove(at: sourceIndexPath.row)
+        productLines[sourceIndexPath.section].products.remove(at: sourceIndexPath.row)
     }
 }

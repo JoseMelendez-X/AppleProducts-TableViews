@@ -12,7 +12,7 @@ class ProductsTableViewController: UITableViewController {
     
     //MARK: Data Models
     
-    var productLine = ProductLine.getProducts()
+    var productLines = ProductLine.getProducts()
     
     //Mark: Lifecycle
     
@@ -30,16 +30,16 @@ class ProductsTableViewController: UITableViewController {
     //MARK: UITableViewDataSource, Required Methods
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return productLine.count
+        return productLines.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return productLine[section].products.count
+        return productLines[section].products.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath) as! ProductTableViewCell
-        let productLine = self.productLine[indexPath.section]
+        let productLine = self.productLines[indexPath.section]
         let product = productLine.products[indexPath.row]
         
         //Set the product property of the ProductTableViewCell
@@ -54,7 +54,7 @@ extension ProductsTableViewController {
     
     //Section titles
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return productLine[section].name
+        return productLines[section].name
     }
     
     //Delete rows
@@ -62,11 +62,24 @@ extension ProductsTableViewController {
         if editingStyle == .delete {
             
             //Delete the product from the productLine's product array.
-            productLine[indexPath.section].products.remove(at: indexPath.row)
+            productLines[indexPath.section].products.remove(at: indexPath.row)
             
             //Update the tableView
             //tableView.reloadData() bad way!
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
+    }
+    
+    //Move Rows
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        
+        //Locate the product that will be moved
+        let productToMove = productLines[sourceIndexPath.section].products[sourceIndexPath.row]
+        
+        //Insert the productToMove to the destinationIndexPaths products. Updates our Model
+        productLines[destinationIndexPath.section].products.insert(productToMove, at: destinationIndexPath.row)
+        
+        //Delete the productToMove from the sourceIndexPaths products
+        productLines[destinationIndexPath.section].products.remove(at: sourceIndexPath.row)
     }
 }
